@@ -1,0 +1,33 @@
+<div class="container row">
+    <div class="col-md-6"><br><br>
+        <h2>User Log-In:</h2>
+        <hr>
+        <div class="col-xs-12 col-sm-10 col-md-8">
+            <!-- login form starts here -->
+            <form [formGroup]="userForm" (ngSubmit)="onLogin()">
+
+                <!-- email input-field -->
+                <div class="form-group">
+                    <label for="email">Email: </label>
+                    <input id="email" formControlName="email" type="email" class="form-control" 
+                    pattern="[A-Za-z0-9]+[^ @]*@[^ @]*\.[A-Za-z0-9]+" placeholder="example@gmail.com">
+                    <p *ngIf="userForm.get('email').invalid && userForm.get('email').touched">Please enter valid email!</p>
+                </div><br>
+
+                <!-- password input-field -->
+                <div class="form-group">
+                    <label for="password">Password: </label>
+                    <input id="password" formControlName="password" type="password" class="form-control" 
+                    placeholder="Enter your password">
+                    <p *ngIf="userForm.get('password').invalid && userForm.get('password').touched">Please enter valid password!</p>
+                </div><br>
+
+                <!-- login button -->
+                <button class="btn btn-primary" type="submit" >Log In</button>
+
+            </form>
+            <!-- login form ends here -->
+        </div>  
+    </div>
+</div>
+            
